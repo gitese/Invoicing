@@ -1,3 +1,4 @@
+import { TransactionRepository } from './implementation/TransactionRepository';
 import { InvoiceRepository } from './implementation/InvoiceRepository';
 import { IGenericRepository } from './interface/IGenericRepository';
 import { UserRepository } from './implementation/UserRepository';
@@ -8,5 +9,6 @@ export{
     GenericRepository,
     UserRepository,
     IGenericRepository,
-    InvoiceRepository
+    InvoiceRepository,
+    TransactionRepository
 };

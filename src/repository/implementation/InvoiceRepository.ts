@@ -1,4 +1,4 @@
-import {EntityRepository, Repository,getConnection,Connection} from "typeorm";
+import {EntityRepository, getConnection,Connection} from "typeorm";
 import {Invoice} from '../../entity';
 import { GenericRepository } from './GenericRepository';
 

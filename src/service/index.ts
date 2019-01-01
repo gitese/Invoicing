@@ -1,3 +1,5 @@
+import { TransactionService } from './implementation/TransactionService';
+import { ITransactionService } from './interface/ITransactionService';
 import { InvoiceService } from './implementation/InvoiceService';
 import { IInvoiceService } from './interface/IInvoiceService';
 import { IUserService } from './interface/IUserService';
@@ -11,5 +13,7 @@ export{
     IEntityService,
     IUserService,
     IInvoiceService,
-    InvoiceService
+    InvoiceService,
+    ITransactionService,
+    TransactionService
 }

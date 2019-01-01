@@ -1,10 +1,10 @@
 import {EntityRepository,getConnection,Connection} from "typeorm";
-import {User} from '../../entity/user';
+import {Transaction} from '../../entity';
 import { GenericRepository } from './GenericRepository';
 
 
-@EntityRepository(User)
-export class UserRepository extends GenericRepository<User>{
+@EntityRepository(Transaction)
+export class TransactionRepository extends GenericRepository<Transaction>{
 
     private readonly _connection: Connection;
 

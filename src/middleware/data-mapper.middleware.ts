@@ -1,8 +1,5 @@
-import { BaseEntity } from 'typeorm';
-import {Request, Response, NextFunction} from 'express';
-import {plainToClass} from 'class-transformer';
 import {User,Transaction,Invoice} from '../entity';
-import { InvoiceDto } from '../model';
+import { InvoiceDto,TransactionDto } from '../model';
 
 const convertArrayToObject = (data: Array<string>)=>{
 
@@ -51,7 +48,23 @@ const InvoiceDataMapper = {
     }
 };
 
+const TransactionDataMapper = {
+
+    requestToModelDto: (data: Object)=>{
+        let transaction:  TransactionDto = new TransactionDto();
+        return mapper(data,transaction);
+    },
+
+    modelToEntityMapper : (data: Object)=>{
+
+        let transaction: Transaction = new Transaction();
+        let excludedProperties = ["invoiceId"];
+        return mapper(data,transaction,excludedProperties);
+    }
+};
+
 export {
     UserDataMapper,
-    InvoiceDataMapper
+    InvoiceDataMapper,
+    TransactionDataMapper
 }

@@ -4,7 +4,6 @@ import {Invoice} from '../../entity';
 import { EntityService } from './EntityService';
 import {getCustomRepository} from "typeorm";
 import {InvoiceRepository} from "../../repository";
-import * as bcrypt from 'bcrypt';
 
 
 @injectable()

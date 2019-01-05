@@ -35,6 +35,8 @@ export class UserService extends EntityService<User> implements IUserService{
 
     public hashPassword(password: string): Promise<string>{
 
+        if(password.length < 1) return Promise.resolve(password);
+
         return new Promise((resolve,reject)=>{
             
             const saltRounds = parseInt(process.env.SALT_ROUNDS);

@@ -33,7 +33,7 @@ export class UserService extends EntityService<User> implements IUserService{
         return status;
     }
 
-    private hashPassword(password: string): Promise<string>{
+    public hashPassword(password: string): Promise<string>{
 
         return new Promise((resolve,reject)=>{
             
@@ -51,9 +51,6 @@ export class UserService extends EntityService<User> implements IUserService{
                 }
             });
 
-        });
-
-        
-        
+        });  
     }
 };

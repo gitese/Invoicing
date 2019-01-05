@@ -5,7 +5,7 @@ import {DeleteResult,UpdateResult} from 'typeorm';
 
 
 @injectable()
-export abstract class EntityService<T> implements IEntityService<T>{
+export class EntityService<T> implements IEntityService<T>{
 
     protected readonly  _repository : GenericRepository<T>;
 
@@ -30,7 +30,6 @@ export abstract class EntityService<T> implements IEntityService<T>{
     public async update(id: string, item: T): Promise<boolean>{
         let itemToBeUpdated: any = item;
         let result: UpdateResult = await this._repository.update(id,itemToBeUpdated);
-        console.log(result);
         return true;
     }
 

@@ -24,8 +24,7 @@ export class UserController implements RegistrableController{
             let users = await this._userService.fetchAll(); 
             res.status(200).json(users);
        }));
-
-
+       
         app.route(`${process.env.ROUTE_PREFIX}/user/:id`)
            .get(routeHandlerMiddleware(async(req: Request, res: Response, next: NextFunction)=>{
 

@@ -6,6 +6,7 @@ import * as bodyParser from 'body-parser';
 import { createConnection } from 'typeorm';
 import {TYPES} from './ioc/types';
 import container from './ioc/inversify.config';
+import * as responseTime from 'response-time';
 
 //import {logger} from './util/Logger';
 import {RegistrableController} from './controller';
@@ -18,6 +19,7 @@ createConnection().then(async (connection)=>{
     // let express support JSON bodies
     app.use(bodyParser.json()); //for parsing application/json
     app.use(bodyParser.urlencoded({extended: true})); //for parsing application/x-www-form-urlencoded
+    app.use(responseTime());
 
     // setup express middleware logging and error handling
     app.use(function (err: Error, req: express.Request, res: express.Response, next: express.NextFunction) {
